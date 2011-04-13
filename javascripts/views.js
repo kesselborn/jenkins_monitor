@@ -31,6 +31,30 @@ $(function() {
 
     initialize: function(options) {
       _.bindAll(this, 'render');
+      this.model.bind('change', this.render);
+      this.model.view = this;
+    },
+
+    renderJenkinsJobs: function() {
+      var that = this;
+      _.each(this.model.jenkinsJobs, function(jenkinsJob) {
+        that.$(".jenkins-jobs").append((new JenkinsJobView({model: jenkinsJob})).render().el);
+      });
+    },
+
+    render: function() {
+      $(this.el).html(this.template(this.model.toJSON()));
+      this.renderJenkinsJobs();
+      return this;
+    }
+  });
+
+  JenkinsJobView = Backbone.View.extend({
+    tagName: 'li',
+    template: _.template($('#jenkins-job-template').html()),
+
+    initialize: function(options) {
+      _.bindAll(this, 'render');
       //this.model.bind('change', this.render);
       this.model.view = this;
     },
@@ -39,6 +63,6 @@ $(function() {
       $(this.el).html(this.template(this.model.toJSON()));
       return this;
     }
-
   });
+
 });

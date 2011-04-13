@@ -20,6 +20,7 @@ JenkinsView = Backbone.Model.extend({
     var that = this;
     that.jenkinsJobs = [];
     _.each(this.attributes.jobs, function(job) {
+      debugger;
       that.jenkinsJobs.push(new JenkinsJob(job));
     });
   }

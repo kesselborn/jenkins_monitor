@@ -22,7 +22,12 @@
     </script>
 
     <script id="jenkins-view-template" type="text/template">
-      <%= name %>
+      <a href="<%= url %>" target="jenkins_monitor"><%= name %></a>
+      <ul class="jenkins-jobs"></ul>
+    </script>
+
+    <script id="jenkins-job-template" type="text/template">
+      <a href="<%= url %>" target="jenkins_monitor"><%= name %></a>
     </script>
 
   </body>
