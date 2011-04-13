@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>css easing test</title>
+    <script type="text/javascript" src="javascripts/vendor/zepto.js"></script>
+    <style type="text/css">
+      #list {
+        -webkit-transition-property: all; 
+        -webkit-transition-duration: 500ms; 
+        -webkit-transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75); 
+        -webkit-transition-delay: initial; 
+        max-width: 430px;
+      }
+      #list li {
+        -webkit-transition-property: all; 
+        -webkit-transition-duration: 500ms; 
+        -webkit-transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75); 
+        -webkit-transition-delay: initial; 
+        display:inline-block;
+        max-width: 20px;
+        max-height: 20px;
+        overflow: hidden;
+      }
+      #list.foo li {
+        -webkit-transition-property: all; 
+        -webkit-transition-duration: 500ms; 
+        -webkit-transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75); 
+        -webkit-transition-delay: initial; 
+        display: list-item;
+      }
+      #list .left {
+        -webkit-transition-property: all; 
+        -webkit-transition-duration: 500ms; 
+        -webkit-transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75); 
+        -webkit-transition-delay: initial; 
+        display:inline-block;
+        max-width: 430px;
+        min-width: 430px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="javascript:$('#list').toggleClass('foo')">toggle display style</a>
+    <a href="javascript:$('#list li').toggleClass('left')">toggle left</a>
+    <ul id="list">
+      <li>test item 1</li>
+      <li>test item 2</li>
+      <li>test item 3</li>
+      <li>test item 4</li>
+      <li>test item 5</li>
+      <li>test item 6</li>
+      <li>test item 7</li>
+      <li>test item 8</li>
+      <li>test item 9</li>
+    </ul>
+  </body>
+</html>
+
