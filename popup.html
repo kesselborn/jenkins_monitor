@@ -6,10 +6,24 @@
     <script type="text/javascript" src="javascripts/vendor/backbone-0.3.3.js"></script>
 
     <script type="text/javascript" src="javascripts/jenkins_server.js"></script>
+    <script type="text/javascript" src="javascripts/views.js"></script>
     <script type="text/javascript" src="javascripts/config.js"></script>
     
+    <link href="stylesheets/jenkins_monitor.css" rel="stylesheet" type="text/css" /> 
   </head>
   <body>
-    Fuck You!
+    <h1>Jenkins Monitor</h1>
+    <ul id="servers">
+    </ul>
+
+    <script id="jenkins-server-template" type="text/template">
+      <h2><%= nodeDescription %></h2>
+      <ul class="jenkins-views"></ul>
+    </script>
+
+    <script id="jenkins-view-template" type="text/template">
+      <%= name %>
+    </script>
+
   </body>
 </html>

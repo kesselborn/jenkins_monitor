@@ -4,29 +4,29 @@ Backbone.Model.prototype.parse = function(resp) {
   return json;
 }
 
-Job = Backbone.Model.extend({
+JenkinsJob = Backbone.Model.extend({
   initialize: function(options) {
     this.set({id:options.name});
   }
 });
 
-View = Backbone.Model.extend({
+JenkinsView = Backbone.Model.extend({
   initialize: function(options) {
-    this.url = options.url;
+    this.url = options.url + '/api/json';
     this.bind("change", this.onChange);
   },
 
   onChange: function() {
     var that = this;
-    that.jobs = [];
+    that.jenkinsJobs = [];
     _.each(this.attributes.jobs, function(job) {
-      that.jobs.push(new Job(job));
+      that.jenkinsJobs.push(new JenkinsJob(job));
     });
   }
 
 });
 
-Server = Backbone.Model.extend({
+JenkinsServer = Backbone.Model.extend({
   initialize: function(options) {
     this.set({id:options.url});
     this.url = options.url;
@@ -35,24 +35,14 @@ Server = Backbone.Model.extend({
 
   onChange: function() {
     var that = this;
-    that.views = [];
-    _.each(this.attributes.views, function(view) {
-      var newView = new View({url:view.url + "/api/json"});
-      newView.fetch();
-      that.views.push(newView);
+    that.jenkinsViews = [];
+    _.each(this.attributes.views, function(jenkinsView) {
+      var newJenkinsView = new JenkinsView(jenkinsView);
+      newJenkinsView.fetch();
+      that.jenkinsViews.push(newJenkinsView);
     });
+    (new JenkinsServerView({model: this, id: 'js-' + this.cid})).render();
     console.log("done");
   },
 
 });
-
-
-JenkinsServer = function(url) {
-  this.url = url;
-
-  this.getServerState = function(callback){
-    $.getJSON(url, function(data){
-      console.log(data);
-    });
-  }
-};
