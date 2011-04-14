@@ -15,9 +15,34 @@ body {
   max-height: 16px;
   margin: 2px;
 }
+.jenkins-job span a {
+  width: 100%;
+}
 
-.jenkins-job span.ok-building, .jenkins-job span.ok { background-color: green; }
-.jenkins-job span.failed-building, .jenkins-job span.failed { background-color: red; }
-.jenkins-job span.unstable-building, .jenkins-job span.unstable { background-color: yellow; }
-.jenkins-job span.pending-building, .jenkins-job span.pending { background-color: gray; }
-.jenkins-job span.aborted-building, .jenkins-job span.aborted { background-color: pink; }
+.building {
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes pulse {
+ 0% {
+   opacity: 1.0;
+   -webkit-transform: scale(1.0) rotate(0deg);
+ }
+ 50% {
+   opacity: 0.3;
+   -webkit-transform: scale(1.1) rotate(-5deg);
+ }
+ 100% {
+   opacity: 1.0;
+   -webkit-transform: scale(1.0) rotate(0deg);
+ }
+}
+
+.jenkins-job span.ok { background-color: green; }
+.jenkins-job span.failed { background-color: red; }
+.jenkins-job span.unstable { background-color: yellow; }
+.jenkins-job span.pending { background-color: gray; }
+.jenkins-job span.aborted { background-color: pink; }
