@@ -1,22 +1,40 @@
 body {
-  width: 400px;
+  width: 600px;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid black;
+  font-family: 'helvetica';
+}
+
+.jenkins-views, 
+.jenkins-view, 
+.jenkins-server,
+#jenkins-servers {
+  display: block;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+.expanded .jenkins-job {
+  display: list-item;
+  overflow: visible;
+  list-style-type: none;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .jenkins-job {
   display: inline-block;
-  max-width: 18px;
-  max-height: 18px;
+  max-width: 16px;
+  max-height: 16px;
   overflow: hidden;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 
 .jenkins-job span {
   padding-left: 1em;
   max-height: 16px;
-  margin: 2px;
-}
-.jenkins-job span a {
-  width: 100%;
+  margin: 1px;
 }
 
 .building {

@@ -31,9 +31,17 @@ $(function() {
     template: _.template($('#jenkins-view-template').html()),
 
     initialize: function(options) {
-      _.bindAll(this, 'render');
+      _.bindAll(this, 'render', 'toggleExpand');
       this.model.bind('change', this.render);
       this.model.view = this;
+    },
+
+    events: {
+      "click li": "toggleExpand"
+    },
+
+    toggleExpand: function() {
+      $(this.el).toggleClass("expanded");
     },
 
     renderJenkinsJobs: function() {

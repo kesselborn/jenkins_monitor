@@ -41,9 +41,37 @@ JenkinsView = Backbone.Model.extend({
   onChange: function() {
     var that = this;
     that.jenkinsJobs = [];
-    _.each(this.attributes.jobs, function(job) {
+    var sortedJobs = _.sortBy(this.attributes.jobs, function(item){return that.jobPriority(item)});
+    _.each(sortedJobs, function(job) {
       that.jenkinsJobs.push(new JenkinsJob(job));
     });
+  },
+
+  jobPriority: function(job) {
+
+  },
+
+  colorToPriority: function(color) {
+    switch(color) {
+      case 'red':          return 100;
+      case 'red_anime':    return 200;
+
+      case 'yellow':       return 300;
+      case 'yellow_anime': return 400;
+
+      case 'grey':         return 500;
+      case 'grey':         return 600;
+
+      case 'aborted':      return 700;
+      case 'aborted_anime':return 800;
+
+      case 'green':        ;
+      case 'blue':         return 900;
+      case 'green_anime':  ;
+      case 'blue_anime':   return 1000;
+
+      default:             return 1100;
+    }
   }
 });
 

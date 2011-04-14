@@ -27,7 +27,16 @@
     </script>
 
     <script id="jenkins-job-template" type="text/template">
-      <span class="<%= status %>"></span><a class="<%= status %>" href="<%= url %>" target="jenkins_monitor"><%= name %></a>
+      <span title="<%= name %>, status: <%= status %>" class="<%= status %>"></span>
+      <a class="<%= status %>" href="<%= url %>" target="jenkins_monitor">
+        <%= name %>
+      </a>
+    </script>
+
+    <script type="text/javascript">
+      (s = new JenkinsServer({url:"http://builder.soundcloud.com/api/json"})).fetch()
+      console.log("checkout s:");
+      console.log(s);
     </script>
 
   </body>
