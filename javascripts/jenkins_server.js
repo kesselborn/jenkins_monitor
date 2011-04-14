@@ -19,8 +19,8 @@ JenkinsJob = Backbone.Model.extend({
       case 'yellow':       return 'unstable';
       case 'yellow-anime': return 'unstable-building';
 
-      case 'grey':         return 'unstable';
-      case 'grey':         return 'unstable-building';
+      case 'grey':         return 'pending';
+      case 'grey':         return 'pending-building';
 
       case 'red':          return 'failed';
       case 'red-anime':    return 'failed-building';
