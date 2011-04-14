@@ -1,3 +1,22 @@
 body {
   width: 400px;
 }
+
+.jenkins-job {
+  display: inline-block;
+  max-width: 18px;
+  max-height: 18px;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+.jenkins-job span {
+  padding-left: 1em;
+  max-height: 16px;
+  margin: 2px;
+}
+
+.jenkins-job span.ok-building, .jenkins-job span.ok { background-color: green; }
+.jenkins-job span.failed-building, .jenkins-job span.failed { background-color: red; }
+.jenkins-job span.unstable-building, .jenkins-job span.unstable { background-color: yellow; }
+.jenkins-job span.pending-building, .jenkins-job span.pending { background-color: gray; }
