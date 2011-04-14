@@ -15,7 +15,8 @@ body {
   margin-left: 0px;
 }
 
-.expanded .jenkins-job {
+.expanded .jenkins-job,
+.error-filter-state .jenkins-job {
   display: list-item;
   overflow: visible;
   list-style-type: none;
@@ -25,15 +26,16 @@ body {
 
 .jenkins-job {
   display: inline-block;
-  max-width: 16px;
-  max-height: 16px;
+  max-width: 1em;
+  max-height: 1em;
   overflow: hidden;
   margin-bottom: 1px;
 }
 
 .jenkins-job span {
   padding-left: 1em;
-  max-height: 16px;
+  max-height: 1em;
+  height: 1em;
   margin: 1px;
 }
 
@@ -64,3 +66,19 @@ body {
 .jenkins-job span.unstable { background-color: yellow; }
 .jenkins-job span.pending { background-color: gray; }
 .jenkins-job span.aborted { background-color: pink; }
+
+
+/* states */
+
+.error-filter-state .jenkins-job span + a,
+.error-filter-state .jenkins-job span 
+{
+  display: none;
+}
+
+.error-filter-state .jenkins-job span.failed + a,
+.error-filter-state .jenkins-job span.failed 
+{
+  display: inline;
+}
+

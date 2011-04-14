@@ -8,11 +8,16 @@
     <script type="text/javascript" src="javascripts/jenkins_server.js"></script>
     <script type="text/javascript" src="javascripts/views.js"></script>
     <script type="text/javascript" src="javascripts/config.js"></script>
+    <script type="text/javascript" src="javascripts/application_controller.js"></script>
     
     <link href="stylesheets/jenkins_monitor.css" rel="stylesheet" type="text/css" /> 
   </head>
   <body>
     <h1>Jenkins Monitor</h1>
+    <form>
+      <label for="error-filter">Only errors</label>
+      <input id="error-filter" name="error-filter" type="checkbox">
+    </form>
     <ul id="jenkins-servers">
     </ul>
 
@@ -31,12 +36,6 @@
       <a class="<%= status %>" href="<%= url %>" target="jenkins_monitor">
         <%= name %>
       </a>
-    </script>
-
-    <script type="text/javascript">
-      (s = new JenkinsServer({url:"http://builder.soundcloud.com/api/json"})).fetch()
-      console.log("checkout s:");
-      console.log(s);
     </script>
 
   </body>
