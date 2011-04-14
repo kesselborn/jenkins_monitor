@@ -48,7 +48,7 @@ JenkinsView = Backbone.Model.extend({
   },
 
   jobPriority: function(job) {
-
+    return this.colorToPriority(job.color);
   },
 
   colorToPriority: function(color) {
