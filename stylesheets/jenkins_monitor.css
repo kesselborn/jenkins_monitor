@@ -20,3 +20,4 @@ body {
 .jenkins-job span.failed-building, .jenkins-job span.failed { background-color: red; }
 .jenkins-job span.unstable-building, .jenkins-job span.unstable { background-color: yellow; }
 .jenkins-job span.pending-building, .jenkins-job span.pending { background-color: gray; }
+.jenkins-job span.aborted-building, .jenkins-job span.aborted { background-color: pink; }

@@ -13,18 +13,21 @@ JenkinsJob = Backbone.Model.extend({
     switch(color) {
       case 'green':        ;
       case 'blue':         return 'ok';
-      case 'green-anime':  ;
-      case 'blue-anime':   return 'ok-building';
+      case 'green_anime':  ;
+      case 'blue_anime':   return 'ok-building';
 
       case 'yellow':       return 'unstable';
-      case 'yellow-anime': return 'unstable-building';
+      case 'yellow_anime': return 'unstable-building';
 
       case 'grey':         return 'pending';
       case 'grey':         return 'pending-building';
 
       case 'red':          return 'failed';
-      case 'red-anime':    return 'failed-building';
-      default:             return 'unknown';
+      case 'red_anime':    return 'failed-building';
+
+      case 'aborted':      return 'aborted';
+      case 'aborted_anime':return 'aborted-building';
+      default:             return color;
     }
   }
 });
