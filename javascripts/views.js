@@ -1,7 +1,7 @@
 $(function() {
   JenkinsServerView = Backbone.View.extend({
     tagName: 'li',
-    className: 'server',
+    className: 'jenkins-server',
     template: _.template($('#jenkins-server-template').html()),
 
     initialize: function(options) {
@@ -18,7 +18,7 @@ $(function() {
     },
 
     render: function() {
-      $('#servers').append(this.el);
+      $('#jenkins-servers').append(this.el);
       $(this.el).html(this.template(this.model.toJSON()));
       this.renderJenkinsViews();
       return this;
@@ -27,6 +27,7 @@ $(function() {
 
   JenkinsViewView = Backbone.View.extend({
     tagName: 'li',
+    className: 'jenkins-view',
     template: _.template($('#jenkins-view-template').html()),
 
     initialize: function(options) {
@@ -51,6 +52,7 @@ $(function() {
 
   JenkinsJobView = Backbone.View.extend({
     tagName: 'li',
+    className: 'jenkins-job',
     template: _.template($('#jenkins-job-template').html()),
 
     initialize: function(options) {
