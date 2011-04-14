@@ -6,7 +6,7 @@ $(function() {
 
     initialize: function(options) {
       _.bindAll(this, 'render');
-      //this.model.bind('change', this.render);
+      this.model.bind('change', this.render);
       this.model.view = this;
     },
 
@@ -57,7 +57,7 @@ $(function() {
 
     initialize: function(options) {
       _.bindAll(this, 'render');
-      //this.model.bind('change', this.render);
+      this.model.bind('change', this.render);
       this.model.view = this;
     },
 
