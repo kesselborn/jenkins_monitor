@@ -6,6 +6,10 @@ body {
   font-family: 'helvetica';
 }
 
+a {
+  text-decoration: none;
+}
+
 .jenkins-views, 
 .jenkins-view, 
 .jenkins-server,

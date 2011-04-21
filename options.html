@@ -1,0 +1,27 @@
+<html>
+  <head><title>Jenkins Monitor Options</title></head>
+  <script type="text/javascript" src="javascripts/vendor/zepto.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/underscore-1.1.4.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/backbone-0.3.3.js"></script>
+
+  <script type="text/javascript" src="javascripts/options.js"></script>
+
+  <link href="stylesheets/jenkins_monitor.css" rel="stylesheet" type="text/css" />
+  <body>
+    <h1>Jenkins Servers</h1>
+    <ul id="jenkins-servers"></ul>
+
+    <script id='options-entry-template' type="text/template">
+      <div>
+        <span><%= url %></span>
+        <a class='remove'>remove</a>
+      </div>
+    </script>
+
+    <form id='add-new-server-form' onsubmit="addNewServer(); return false;">
+      <input type="text" size="80" placeholder="enter a hudson server url here">
+      <input type="submit">
+    </form>
+  </body>
+</html>
+

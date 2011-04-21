@@ -1,7 +1,7 @@
 $(function() {
   JenkinsServerView = Backbone.View.extend({
-    tagName: 'li',
-    className: 'jenkins-server',
+    tagname: 'li',
+    classname: 'jenkins-server',
     template: _.template($('#jenkins-server-template').html()),
 
     initialize: function(options) {
