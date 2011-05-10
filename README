@@ -1,0 +1,12 @@
+totally work in progress ... not really meant for usage.
+If you want to try anyways clone this repo, then open chrome, go to 
+
+tools > extensions
+
+expand developer mode and click 'Load unpacked extension' and select the directory with the repo.
+
+In the options dialog add a hudson url without the api/json part, i.e.
+
+http://hudson.hyperic.com/
+
+click the 'jenkins' icon to get a list of jobs. Click on red/green square to expand list
