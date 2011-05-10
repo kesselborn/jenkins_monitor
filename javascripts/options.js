@@ -26,7 +26,6 @@ function removeServer(url) {
     if(serverUrls[i] === url) {
       serverUrls[i] = null;
     }
-    break;
   }
 
   localStorage["JenkinsServerOptions"] = JSON.stringify(_.compact(serverUrls));
